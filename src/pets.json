@@ -1,11 +1,11 @@
 [
   {
     "id": 0,
-    "name": "Frieda",
-    "picture": "images/scottish-terrier.jpeg",
-    "age": 3,
-    "breed": "Scottish Terrier",
-    "location": "Lisco, Alabama"
+    "name": "Call of Duty",
+    "picture": "images/maxresdefault.jpg",
+    "age": "-50%",
+    "breed": "$8000",
+    "location": "$4000"
   },
   {
     "id": 1,
@@ -92,7 +92,7 @@
     "name": "Dean",
     "picture": "images/scottish-terrier.jpeg",
     "age": 3,
-    "breed": "Golden Retriever",
+    "breed": "Scottish Terrier",
     "location": "Windsor, Montana"
   },
   {
