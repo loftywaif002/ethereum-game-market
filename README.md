@@ -1,10 +1,10 @@
-# Ethereum-T-shop
+# ethreum-game-market
 ## Project for CMPE273-Fall-17 
 
 ###Instructions: <br />
 
 ```javascript
-git clone https://github.com/loftywaif002/Ethereum-T-shop.git
+git clone https://github.com/loftywaif002/ethereum-game-market.git
 cd Ethereum-T-shop
 npm install
 npm install -g ethereumjs-testrpc
