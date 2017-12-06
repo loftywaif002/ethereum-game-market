@@ -1,12 +1,14 @@
 App = {
   web3Provider: null,
   contracts: {},
-
+ 
   init: function() {
+    var codes = new Array(15);
     // Load pets.
     $.getJSON('../pets.json', function(data) {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
+      
 
       for (i = 0; i < data.length; i ++) {
         petTemplate.find('.panel-title').text(data[i].name);
@@ -15,7 +17,6 @@ App = {
         petTemplate.find('.discount').text(data[i].discount);
         petTemplate.find('.price').text(data[i].price);
         petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
         petsRow.append(petTemplate.html());
       }
     });
@@ -78,6 +79,16 @@ App = {
 
 },
 
+getBalance: function(address) {
+  return web3.eth.getBalance(address, function (error, result) {
+    if (!error) {
+      console.log(`Buyer account balance: ${result.toNumber()}`);
+    } else {
+      console.error(error);
+    }
+  })
+},
+
 
 handleAdopt: function() {
     event.preventDefault();
@@ -95,17 +106,18 @@ handleAdopt: function() {
 
 
   var account = accounts[0];
-  console.log(accounts);
-    
-
+  console.log(`Buyer account address ${account}`);
+  App.getBalance(account);    
+  
   App.contracts.Adoption.deployed().then(function(instance) {
     adoptionInstance = instance;
-
+ 
   // Execute adopt as a transaction by sending account
   return adoptionInstance.adopt(petId, {from: account});
        }).then(function(result) {
-    //return adoptionInstance.charge({from: account, to: '0xbba101a2cdfb9de4e67e3321f164ce5830f24e66', gas:'653165', gasPrice:'30', value: web3.toWei(1, "ether")});    
-    //web3.eth.sendTransaction({from: account, to: '0xbba101a2cdfb9de4e67e3321f164ce5830f24e66', value: web3.toWei(1, "ether")}, function(result){console.log(result);});    
+        console.log(`result is ${result}`);
+    return adoptionInstance.charge({from: account, to: '0xc70fe1ab6d1c64153a18046b4112c43ce0d8dc2b', gas:'653165', gasPrice:'30', value: web3.toWei(1, "ether")});  
+    //web3.eth.sendTransaction({from: account, to: '0x63366c7073c4bbf53422ce7011c18312a31a3a4b', value: web3.toWei(1, "ether")});    
       return App.markAdopted();
     }).catch(function(err) {
     console.log(err.message);
