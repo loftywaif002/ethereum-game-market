@@ -2,7 +2,15 @@ pragma solidity ^0.4.4;
 
 contract Adoption {
 
-  address[16] public adopters;  
+  address[16] public adopters;
+  address private owner; //this stores the contract oners address
+  uint private amount;
+
+  //Constructor 
+  //gets automatically called only once with owners address when contract is first deployed 
+  function Adoption () public{
+	owner = msg.sender;
+  }
 
   // Adopting a pet
 function adopt(uint petId) public returns (uint) {
@@ -18,5 +26,10 @@ function adopt(uint petId) public returns (uint) {
 function getAdopters() public returns (address[16]) {
   return adopters;
 }
+
+ function charge() payable {
+       amount = msg.value;
+       owner.transfer(amount);
+    }
 
 }
