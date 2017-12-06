@@ -59,6 +59,16 @@ App = {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
+  get_code: function() {
+  var text = "";
+  var possible = "ABCDEFG-HIJKLMN-OPQRSTU-VWXYZab-cdefghij-klmno-pqrst-uvwxyz0123456789";
+
+  for (var i = 0; i < 12; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+},
+
   markAdopted: function(adopters, account) {
 
   var adoptionInstance;
@@ -68,9 +78,12 @@ App = {
 
   return adoptionInstance.getAdopters.call();
     }).then(function(adopters) {
+
+
   for (i = 0; i < adopters.length; i++) {
     if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
        $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+        $('.panel-pet').eq(i).find(".code").text(`Code: ${App.get_code()}`);
      }
     }
   }).catch(function(err) {
