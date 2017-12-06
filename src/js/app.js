@@ -11,9 +11,9 @@ App = {
       for (i = 0; i < data.length; i ++) {
         petTemplate.find('.panel-title').text(data[i].name);
         petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
+        petTemplate.find('.oprice').text(data[i].oprice);
+        petTemplate.find('.discount').text(data[i].discount);
+        petTemplate.find('.price').text(data[i].price);
         petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
 
         petsRow.append(petTemplate.html());
@@ -38,7 +38,7 @@ App = {
   },
 
   initContract: function() {
-    
+
   $.getJSON('Adoption.json', function(data) {
   // Get the necessary contract artifact file and instantiate it with truffle-contract
   var AdoptionArtifact = data;
@@ -59,7 +59,7 @@ App = {
   },
 
   markAdopted: function(adopters, account) {
-    
+
   var adoptionInstance;
 
   App.contracts.Adoption.deployed().then(function(instance) {
@@ -85,11 +85,11 @@ App = {
 
     var adoptionInstance;
 
-web3.eth.getAccounts(function(error, accounts) {
+  web3.eth.getAccounts(function(error, accounts) {
   if (error) {
     console.log(error);
   }
-  
+
   var account = accounts[0];
 
   App.contracts.Adoption.deployed().then(function(instance) {
@@ -101,7 +101,7 @@ web3.eth.getAccounts(function(error, accounts) {
       return App.markAdopted();
     }).catch(function(err) {
     console.log(err.message);
-     }); 
+     });
    });
 
   }

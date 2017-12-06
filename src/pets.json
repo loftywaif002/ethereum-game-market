@@ -3,128 +3,128 @@
     "id": 0,
     "name": "Call of Duty",
     "picture": "images/maxresdefault.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-50%",
+    "oprice": 10,
+    "price": 5
   },
   {
     "id": 1,
     "name": "Assasin's Creed",
     "picture": "images/assasin_creed.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-30%",
+    "oprice": 10,
+    "price": 7
   },
   {
     "id": 2,
     "name": "Batman",
     "picture": "images/batman.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-50%",
+    "oprice": 8,
+    "price": 4
   },
   {
     "id": 3,
     "name": "Battle Underground",
     "picture": "images/battle-ug.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-40%",
+    "oprice": 10,
+    "price": 6
   },
   {
     "id": 4,
     "name": "Cricket",
     "picture": "images/cricket.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-33%",
+    "oprice": 10,
+    "price": 6
   },
   {
     "id": 5,
     "name": "Destiny",
     "picture": "images/Destiny-2.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-10%",
+    "oprice": 10,
+    "price": 9
   },
   {
     "id": 6,
     "name": "Fallout 4",
     "picture": "images/fallout.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-90%",
+    "oprice": 10,
+    "price": 1
   },
   {
     "id": 7,
     "name": "Fifa",
     "picture": "images/fifa.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-30%",
+    "oprice": 10,
+    "price": 7
   },
   {
     "id": 8,
     "name": "Injustice 2",
     "picture": "images/injustice.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-80%",
+    "oprice": 10,
+    "price": 2
   },
   {
     "id": 9,
     "name": "Need for Speed",
     "picture": "images/nfs.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-50%",
+    "oprice": 8,
+    "price": 4
   },
   {
     "id": 10,
     "name": "Prey",
     "picture": "images/prey.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-40%",
+    "oprice": 10,
+    "price": 6
   },
   {
     "id": 11,
     "name": "Rainbow Six Siege",
     "picture": "images/rainbow-six-siege.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-80%",
+    "oprice": 10,
+    "price": 2
   },
   {
     "id": 12,
     "name": "Shadow of War",
     "picture": "images/sow.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-50%",
+    "oprice": 5,
+    "price": 2.5
   },
   {
     "id": 13,
     "name": "Starcraft 2",
     "picture": "images/starcraft.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-50%",
+    "oprice": 2,
+    "price": 1
   },
   {
     "id": 14,
     "name": "Walking Dead",
     "picture": "images/walking-dead.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-33%",
+    "oprice": 6,
+    "price": 4
   },
   {
     "id": 15,
     "name": "Watch Dogs 2",
     "picture": "images/watch_dogs_2.jpg",
-    "age": "-50%",
-    "breed": "$8000",
-    "location": "$4000"
+    "discount": "-66%",
+    "oprice": 6,
+    "price": 2
   }
 ]
