@@ -78,27 +78,34 @@ App = {
 
 },
 
-  handleAdopt: function() {
+
+handleAdopt: function() {
     event.preventDefault();
 
     var petId = parseInt($(event.target).data('id'));
 
     var adoptionInstance;
 
+
+
   web3.eth.getAccounts(function(error, accounts) {
   if (error) {
     console.log(error);
   }
 
+
   var account = accounts[0];
+  console.log(accounts);
+    
 
   App.contracts.Adoption.deployed().then(function(instance) {
     adoptionInstance = instance;
 
-    // Execute adopt as a transaction by sending account
+  // Execute adopt as a transaction by sending account
   return adoptionInstance.adopt(petId, {from: account});
        }).then(function(result) {
-        adoptionInstance.charge({from: account, value:1});
+    //return adoptionInstance.charge({from: account, to: '0xbba101a2cdfb9de4e67e3321f164ce5830f24e66', gas:'653165', gasPrice:'30', value: web3.toWei(1, "ether")});    
+    //web3.eth.sendTransaction({from: account, to: '0xbba101a2cdfb9de4e67e3321f164ce5830f24e66', value: web3.toWei(1, "ether")}, function(result){console.log(result);});    
       return App.markAdopted();
     }).catch(function(err) {
     console.log(err.message);

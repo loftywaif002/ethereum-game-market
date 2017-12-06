@@ -4,7 +4,7 @@ contract Adoption {
 
   address[16] public adopters;
   address private owner; //this stores the contract oners address
-  uint public amount;
+  
 
   //Constructor 
   //gets automatically called only once with owners address when contract is first deployed 
@@ -27,9 +27,9 @@ function getAdopters() public returns (address[16]) {
   return adopters;
 }
 
- function charge(uint amount) payable {
-       amount = msg.value;
-       owner.transfer(amount);
-   }
+function charge() payable returns (bool) {
+  return true;
+}
+
 
 }
