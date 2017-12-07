@@ -1,14 +1,14 @@
 App = {
   web3Provider: null,
   contracts: {},
- 
+
   init: function() {
     var codes = new Array(15);
     // Load pets.
     $.getJSON('../pets.json', function(data) {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
-      
+
 
       for (i = 0; i < data.length; i ++) {
         petTemplate.find('.panel-title').text(data[i].name);
@@ -40,13 +40,13 @@ App = {
 
   initContract: function() {
 
-  $.getJSON('Adoption.json', function(data) {
+  $.getJSON('Purchase.json', function(data) {
   // Get the necessary contract artifact file and instantiate it with truffle-contract
   var AdoptionArtifact = data;
-  App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+  App.contracts.Purchase = TruffleContract(AdoptionArtifact);
 
   // Set the provider for our contract
-  App.contracts.Adoption.setProvider(App.web3Provider);
+  App.contracts.Purchase.setProvider(App.web3Provider);
 
   // Use our contract to retrieve and mark the adopted pets
   return App.markAdopted();
@@ -73,7 +73,7 @@ App = {
 
   var adoptionInstance;
 
-  App.contracts.Adoption.deployed().then(function(instance) {
+  App.contracts.Purchase.deployed().then(function(instance) {
     adoptionInstance = instance;
 
   return adoptionInstance.getAdopters.call();
@@ -120,11 +120,11 @@ handleAdopt: function() {
 
   var account = accounts[0];
   console.log(`Buyer account address ${account}`);
-  App.getBalance(account);    
-  
-  App.contracts.Adoption.deployed().then(function(instance) {
+  App.getBalance(account);
+
+  App.contracts.Purchase.deployed().then(function(instance) {
     adoptionInstance = instance;
- 
+
   // Execute adopt as a transaction by sending account
   return adoptionInstance.adopt(petId, {from: account});
        }).then(function(result) {
@@ -134,10 +134,10 @@ handleAdopt: function() {
       else{
         console.log(`Result is ${result}`);
       }
-    });  
-    //web3.eth.sendTransaction({from: account, to: '0x63366c7073c4bbf53422ce7011c18312a31a3a4b', value: web3.toWei(1, "ether")});    
+    });
+    //web3.eth.sendTransaction({from: account, to: '0x63366c7073c4bbf53422ce7011c18312a31a3a4b', value: web3.toWei(1, "ether")});
       location.reload(true);
-      return App.markAdopted();     
+      return App.markAdopted();
     }).catch(function(err) {
     console.log(err.message);
      });
