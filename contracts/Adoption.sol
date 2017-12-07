@@ -27,7 +27,7 @@ function getAdopters() public returns (address[16]) {
   return adopters;
 }
 
-function charge() payable returns (bool) {
+function charge() payable public returns (bool) {
   return true;
 }
 

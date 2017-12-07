@@ -129,9 +129,15 @@ handleAdopt: function() {
   return adoptionInstance.adopt(petId, {from: account});
        }).then(function(result) {
         console.log(`result is ${result}`);
-    return adoptionInstance.charge({from: account, to: '0xc70fe1ab6d1c64153a18046b4112c43ce0d8dc2b', gas:'653165', gasPrice:'30', value: web3.toWei(1, "ether")});  
+    return adoptionInstance.charge({from: account, to: '0xc70fe1ab6d1c64153a18046b4112c43ce0d8dc2b', gas:'653165', gasPrice:'30', value: 1000}, function(err, result){
+      if(err) console.log(`Error occured in charge function ${err.message}`);
+      else{
+        console.log(`Result is ${result}`);
+      }
+    });  
     //web3.eth.sendTransaction({from: account, to: '0x63366c7073c4bbf53422ce7011c18312a31a3a4b', value: web3.toWei(1, "ether")});    
-      return App.markAdopted();
+      location.reload(true);
+      return App.markAdopted();     
     }).catch(function(err) {
     console.log(err.message);
      });
